@@ -7,7 +7,7 @@
 // Other code you write will be lost the next time you deploy the project.
 import "mx-global";
 import { Big } from "big.js";
-import * as Wot from "@node-wot/browser-bundle";
+import * as WoT from "@node-wot/browser-bundle";
 
 // BEGIN EXTRA CODE
 const config = {
@@ -22,15 +22,16 @@ const config = {
 
 console.log(config.devServer.proxy);
 
-var servient = new Wot.Core.Servient();
-servient.addClientFactory(new Wot.Http.HttpClientFactory());
-var helpers = new Wot.Core.Helpers(servient);
+var servient = new WoT.Core.Servient();
+servient.addClientFactory(new WoT.Http.HttpClientFactory());
+var helpers = new WoT.Core.Helpers(servient);
 let counterProperties = [];
 
 async function get_td(propertyName) {
 //  var addr = "http://localhost:8081/counter/";
     //var addr = "http://153.109.130.80:5000/sensor_data/";
-    var addr = "http://153.109.130.89:8080/nordic-thingy/";
+    var addr = "http://153.109.130.81:8080/nordic-thingy/";
+    //var addr = "http://10.40.1.171:8080/nordic-thingy/";
   let ret = "";
   try{
     const thingFactory = await servient.start();
