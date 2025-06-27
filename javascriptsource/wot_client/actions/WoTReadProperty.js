@@ -30,8 +30,9 @@ let counterProperties = [];
 async function get_td(propertyName) {
 //  var addr = "http://localhost:8081/counter/";
     //var addr = "http://153.109.130.80:5000/sensor_data/";
-    var addr = "http://153.109.22.167:8080/nordic-thingy/";
+    //var addr = "http://153.109.22.167:8080/nordic-thingy/";
     //var addr = "http://10.40.1.171:8080/nordic-thingy/";
+    var addr = "http://153.109.22.167:8088/multi-sensor/";
   let ret = "";
   try{
     const thingFactory = await servient.start();
