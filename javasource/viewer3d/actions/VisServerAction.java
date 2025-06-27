@@ -10,13 +10,13 @@
 package viewer3d.actions;
 
 import com.mendix.systemwideinterfaces.core.IContext;
-import com.mendix.webui.CustomJavaAction;
 import viewer3d.actions.controller.MxController;
+import com.mendix.systemwideinterfaces.core.UserAction;
 
 /**
  * Set up visualization server infrastructure.
  */
-public class VisServerAction extends CustomJavaAction<java.lang.Void>
+public class VisServerAction extends UserAction<java.lang.Void>
 {
 	public VisServerAction(IContext context)
 	{
