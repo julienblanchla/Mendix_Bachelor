@@ -1,0 +1,162 @@
+@import "./custom-variables";
+
+/* ============================================================
+   0) Fond violet & reset pour la page Exercices
+============================================================ */
+.exercises-root {
+  min-height: 100vh !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: linear-gradient(135deg, #6d5afe 0%, #8a67ff 100%) !important;
+}
+.exercises-root .mx-layout-grid,
+.exercises-root .mx-container {
+  background: transparent !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* ============================================================
+   1) Barre blanche de navigation (Back + nav buttons)
+============================================================ */
+.header-bar {
+  background: #fff;
+  border-radius: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  margin: 1rem auto 2rem;
+  max-width: calc(100% - 2rem);
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.nav-buttons {
+  display: flex;
+  gap: 1rem;
+}
+.nav-buttons .mx-button {
+  background: #f8fafc;
+  color: #374151;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.nav-buttons .mx-button:hover {
+  background: #eef2f7;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+}
+.nav-buttons .mx-button.active {
+  background: linear-gradient(135deg, #4f46e5 0%, #6d5afe 100%);
+  color: #fff;
+  border: none;
+}
+
+/* ============================================================
+   2) Bouton “Back to Patients”
+============================================================ */
+.back-button {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.5rem;
+  background: #fff !important;
+  color: #374151 !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 8px !important;
+  padding: 0.5rem 1rem !important;
+  font-size: 1rem !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06) !important;
+  margin: 1rem auto !important;
+  text-decoration: none !important;
+  cursor: pointer;
+}
+.back-button:hover {
+  background: #eef2f7 !important;
+}
+
+/* ============================================================
+   3) Titre de section “Available Exercises”
+============================================================ */
+.section-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #1f2937;
+  text-align: center;
+  margin-bottom: 2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ============================================================
+   4) Centrage du layoutGrid1 (contenant toute la page)
+============================================================ */
+.exercises-root .mx-name-layoutGrid1 {
+  display: flex !important;
+  justify-content: center !important;
+  margin: 0 auto !important;
+  width: 100% !important;
+}
+
+/* ============================================================
+   5) Mettre les deux lignes côte-à-côte en forçant layoutGrid5
+============================================================ */
+.exercises-root .mx-name-layoutGrid5 {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 1.5rem !important;
+  margin-bottom: 3rem !important;
+}
+
+/* ============================================================
+   6) Carte d’un exercice
+============================================================ */
+.exercise-card {
+  position: relative !important;
+  background: #f5f9fc !important;
+  border-radius: 16px !important;
+  padding: 1.5rem !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  width: 320px; /* largeur fixe pour uniformiser */
+}
+.exercise-card::before {
+  content: "" !important;
+  position: absolute !important;
+  top: 0; bottom: 0; left: 0 !important;
+  width: 4px !important;
+  background: #10b981 !important;
+}
+.exercise-card img {
+  max-width: 100% !important;
+  height: auto !important;
+  border-radius: 8px !important;
+  margin-bottom: 1rem !important;
+}
+.exercise-card .title {
+  font-size: 1.25rem !important;
+  font-weight: 600 !important;
+  color: #1f2937 !important;
+  margin-bottom: 1rem !important;
+  text-align: center;
+}
+.exercise-card .start-button {
+  background: #10b981 !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 12px !important;
+  padding: 0.75rem 1.5rem !important;
+  font-size: 1rem !important;
+  font-weight: 500 !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06) !important;
+  transition: filter 0.2s !important;
+}
+.exercise-card .start-button:hover {
+  filter: brightness(1.05) !important;
+}

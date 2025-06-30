@@ -27100,9 +27100,9 @@ input[type=checkbox].three-state-checkbox + .control-label {
   padding: 0;
 }
 
-/* ============================================================
+/* ------------------------------------------------------------
    0) Fond violet & reset général
-   ============================================================ */
+------------------------------------------------------------ */
 .motion-root {
   min-height: 100vh;
   margin: 0;
@@ -27117,11 +27117,339 @@ input[type=checkbox].three-state-checkbox + .control-label {
   padding: 0;
 }
 
-/* ============================================================
+/* ------------------------------------------------------------
    1) Barre blanche de navigation
+------------------------------------------------------------ */
+.header-bar {
+  width: calc(100% - 2rem);
+  max-width: 900px;
+  background: #ffffff;
+  border-radius: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  margin: 1rem auto;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-buttons .mx-button {
+  /* tes règles existantes */
+}
+
+.nav-buttons .mx-button.active {
+  /* tes règles existantes */
+}
+
+/* ------------------------------------------------------------
+   2) Centre et ajuste LE wrapper "motion-card"
+------------------------------------------------------------ */
+.motion-card {
+  width: 80%;
+  max-width: 700px;
+  margin: 2rem auto;
+  background: #f5f9fc;
+  border-radius: 16px;
+  padding: 3rem 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* ------------------------------------------------------------
+   3) Titre “Motion Detection”
+------------------------------------------------------------ */
+.motion-card .page-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ------------------------------------------------------------
+   4) Card contenant l’image
+------------------------------------------------------------ */
+.motion-image-wrapper {
+  width: 200px;
+  margin: 0 auto 1.5rem;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.motion-image-wrapper img,
+.motion-image-wrapper .mx-imageviewer {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+  object-fit: cover;
+}
+
+/* ------------------------------------------------------------
+   5) Texte d’alerte sous la carte – full width auto, pas de wrapping
+------------------------------------------------------------ */
+.motion-alert {
+  display: block;
+  /* toute la largeur nécessaire */
+  width: auto;
+  /* auto pour s’ajuster au contenu */
+  margin: 1rem auto;
+  /* centré horizontalement */
+  padding: 1rem 2rem;
+  /* espace intérieur confortable */
+  background: #ffffff;
+  border-radius: 12px;
+  font-size: 1rem;
+  color: #374151;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  white-space: nowrap;
+  /* empêche tout retour à la ligne */
+  overflow-x: auto;
+  /* en cas de très long texte, scroll si besoin */
+  text-align: center;
+  /* centre le texte */
+}
+
+/* ============================================================
+   0) Fond violet & reset pour la page Patients
+   ============================================================ */
+.patients-root {
+  min-height: 100vh !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: linear-gradient(135deg, #6d5afe 0%, #8a67ff 100%) !important;
+}
+
+.patients-root .mx-layout-grid,
+.patients-root .mx-container {
+  background: transparent !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* ============================================================
+   1) Aligner HORIZONTALement les boutons du snippet
+      sans toucher à leur apparence native
+   ============================================================ */
+.patients-root .mx-grid-control-bar {
+  display: flex !important;
+  /* on passe en flex */
+  justify-content: center !important;
+  /* centré horizontalement */
+  align-items: center !important;
+  gap: 1rem !important;
+  /* espace équivalent entre boutons */
+  width: calc(100% - 2rem) !important;
+  max-width: 900px !important;
+  margin: 1.5rem auto !important;
+}
+
+/* PLUS AUCUNE règle .mx-grid-control-bar .mx-button ici ! */
+/* ============================================================
+   2) Barre de navigation principale (Dashboard/Charts/…)
    ============================================================ */
 .header-bar {
+  width: calc(100% - 2rem);
+  max-width: 900px;
   background: #ffffff;
+  border-radius: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  margin: 1rem auto;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-buttons .mx-button {
+  background-color: #f8fafc;
+  color: #374151;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.nav-buttons .mx-button:hover {
+  background-color: #eef2f7;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+.nav-buttons .mx-button.active {
+  background: linear-gradient(135deg, #4f46e5 0%, #6d5afe 100%);
+  color: #ffffff;
+  border: none;
+}
+
+/* ============================================================
+   3) En-tête “Patients List” + bouton Add New Patient
+   ============================================================ */
+.patients-header {
+  width: calc(100% - 2rem);
+  max-width: 900px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1rem 2rem;
+  margin: 2rem auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.patients-header .page-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.patients-header .add-button {
+  background: #10b981;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  transition: filter 0.2s;
+}
+
+.patients-header .add-button:hover {
+  filter: brightness(1.05);
+}
+
+/* ============================================================
+   4) Grille responsive de cartes patient
+   ============================================================ */
+.patients-root .patients-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important;
+  gap: 1rem !important;
+  margin: 0 auto 2rem !important;
+  width: calc(100% - 2rem) !important;
+  max-width: 900px !important;
+}
+
+/* ============================================================
+   5) Carte individuelle patient
+   ============================================================ */
+.patient-card {
+  position: relative !important;
+  background: #f5f9fc !important;
+  border-radius: 16px !important;
+  padding: 1.5rem !important;
+  margin: 1rem !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+  overflow: hidden !important;
+}
+
+.patient-card::before {
+  content: "" !important;
+  position: absolute !important;
+  top: 0;
+  bottom: 0;
+  left: 0 !important;
+  width: 4px !important;
+  background: #3b82f6 !important;
+}
+
+/* Avatar centré */
+.patient-card .avatar,
+.patient-card img.avatar,
+.patient-card .mx-imageviewer.avatar {
+  display: block !important;
+  width: 64px !important;
+  height: 64px !important;
+  margin: 0 auto 1rem !important;
+  border-radius: 50% !important;
+  border: 2px solid #e5e7eb !important;
+  object-fit: cover !important;
+}
+
+/* Nom du patient */
+.patient-card .name {
+  text-align: center !important;
+  font-size: 1.25rem !important;
+  font-weight: 600 !important;
+  color: #1f2937 !important;
+  margin-bottom: 0.5rem !important;
+}
+
+/* Labels & valeurs alignés */
+.patient-card .label {
+  display: inline-block !important;
+  width: 80px !important;
+  font-weight: 600 !important;
+  color: #4b5563 !important;
+  vertical-align: top !important;
+  margin-bottom: 0.25rem !important;
+}
+
+.patient-card .label + .mx-text {
+  display: inline-block !important;
+  color: #1f2937 !important;
+  margin-bottom: 0.25rem !important;
+}
+
+/* ============================================================
+   6) Bouton “Exercises List”
+   ============================================================ */
+.patient-card .mx-button {
+  display: block !important;
+  margin: 1rem auto 0 !important;
+  background: #0891b2 !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 8px !important;
+  padding: 0.5rem 1rem !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06) !important;
+  transition: filter 0.2s !important;
+}
+
+.patient-card .mx-button:hover {
+  filter: brightness(1.1) !important;
+}
+
+/* ============================================================
+   0) Fond violet & reset pour la page Exercices
+============================================================ */
+.exercises-root {
+  min-height: 100vh !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: linear-gradient(135deg, #6d5afe 0%, #8a67ff 100%) !important;
+}
+
+.exercises-root .mx-layout-grid,
+.exercises-root .mx-container {
+  background: transparent !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* ============================================================
+   1) Barre blanche de navigation (Back + nav buttons)
+============================================================ */
+.header-bar {
+  background: #fff;
   border-radius: 1.5rem;
   padding: 0.75rem 1.5rem;
   margin: 1rem auto 2rem;
@@ -27155,72 +27483,285 @@ input[type=checkbox].three-state-checkbox + .control-label {
 
 .nav-buttons .mx-button.active {
   background: linear-gradient(135deg, #4f46e5 0%, #6d5afe 100%);
-  color: #ffffff;
+  color: #fff;
   border: none;
 }
 
 /* ============================================================
-   2) Conteneur principal de la section Motion
-   ============================================================ */
-.motion-section {
-  background: #f5f9fc;
-  border-radius: 16px;
-  padding: 3rem 2rem;
-  /* padding agrandi */
-  margin: 0 auto 2rem;
-  max-width: 1000px;
-  /* largeur centrée */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
+   2) Bouton “Back to Patients”
+============================================================ */
+.back-button {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.5rem;
+  background: #fff !important;
+  color: #374151 !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 8px !important;
+  padding: 0.5rem 1rem !important;
+  font-size: 1rem !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06) !important;
+  margin: 1rem auto !important;
+  text-decoration: none !important;
+  cursor: pointer;
+}
+
+.back-button:hover {
+  background: #eef2f7 !important;
 }
 
 /* ============================================================
-   3) Titre “Motion Detection”
-   ============================================================ */
-.motion-section .page-title {
+   3) Titre de section “Available Exercises”
+============================================================ */
+.section-title {
   font-size: 1.75rem;
   font-weight: 600;
   color: #1f2937;
-  margin-bottom: 1.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
 }
 
 /* ============================================================
-   4) Card contenant l’image
-   ============================================================ */
-.motion-card {
-  background: #ffffff;
-  border-radius: 16px;
-  padding: 2rem;
-  display: inline-block;
-  width: 250px;
-  /* largeur fixe centrée */
-  margin: 0 auto 1.5rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.motion-card img,
-.motion-card .mx-imageviewer {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  display: block;
-  object-fit: cover;
+   4) Centrage du layoutGrid1 (contenant toute la page)
+============================================================ */
+.exercises-root .mx-name-layoutGrid1 {
+  display: flex !important;
+  justify-content: center !important;
+  margin: 0 auto !important;
+  width: 100% !important;
 }
 
 /* ============================================================
-   5) Texte d’alerte sous la card
-   ============================================================ */
-.motion-alert {
-  display: inline-block;
+   5) Mettre les deux lignes côte-à-côte en forçant layoutGrid5
+============================================================ */
+.exercises-root .mx-name-layoutGrid5 {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 1.5rem !important;
+  margin-bottom: 3rem !important;
+}
+
+/* ============================================================
+   6) Carte d’un exercice
+============================================================ */
+.exercise-card {
+  position: relative !important;
+  background: #f5f9fc !important;
+  border-radius: 16px !important;
+  padding: 1.5rem !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  width: 320px;
+  /* largeur fixe pour uniformiser */
+}
+
+.exercise-card::before {
+  content: "" !important;
+  position: absolute !important;
+  top: 0;
+  bottom: 0;
+  left: 0 !important;
+  width: 4px !important;
+  background: #10b981 !important;
+}
+
+.exercise-card img {
+  max-width: 100% !important;
+  height: auto !important;
+  border-radius: 8px !important;
+  margin-bottom: 1rem !important;
+}
+
+.exercise-card .title {
+  font-size: 1.25rem !important;
+  font-weight: 600 !important;
+  color: #1f2937 !important;
+  margin-bottom: 1rem !important;
+  text-align: center;
+}
+
+.exercise-card .start-button {
+  background: #10b981 !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 12px !important;
+  padding: 0.75rem 1.5rem !important;
+  font-size: 1rem !important;
+  font-weight: 500 !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06) !important;
+  transition: filter 0.2s !important;
+}
+
+.exercise-card .start-button:hover {
+  filter: brightness(1.05) !important;
+}
+
+/* ============================================================
+   Page racine “Current Exercise”
+============================================================ */
+.current-root {
+  min-height: 100vh !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: linear-gradient(135deg, #6d5afe 0%, #8a67ff 100%) !important;
+  /* rendre transparents tous les containers internes */
+  /* ============================================================
+     1) Barre blanche de navigation (Dashboard / Charts / …)
+  ============================================================ */
+  /* ============================================================
+     2) Container du Back-button aligné à droite
+  ============================================================ */
+  /* ============================================================
+     3) Titre de la section
+  ============================================================ */
+  /* ============================================================
+     4) Conteneur principal de l’exercice
+  ============================================================ */
+  /* ============================================================
+     5) Image du capteur / avatar
+  ============================================================ */
+  /* ============================================================
+     6) Bouton “Start”
+  ============================================================ */
+  /* ============================================================
+     7) Champ d’information / alerte
+  ============================================================ */
+  /* ============================================================
+     8) Bouton “Export CSV”
+  ============================================================ */
+}
+.current-root .mx-layout-grid,
+.current-root .mx-container {
+  background: transparent !important;
+}
+.current-root .header-bar {
+  background: #ffffff;
+  border-radius: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  margin: 1rem auto 2rem;
+  max-width: calc(100% - 2rem);
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.current-root .header-bar .nav-buttons {
+  display: flex;
+  gap: 1rem;
+}
+.current-root .header-bar .nav-buttons .mx-button {
   background: #f8fafc;
+  color: #374151;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.current-root .header-bar .nav-buttons .mx-button:hover {
+  background: #eef2f7;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+.current-root .header-bar .nav-buttons .mx-button.active {
+  background: linear-gradient(135deg, #4f46e5 0%, #6d5afe 100%);
+  color: #ffffff;
+  border: none;
+}
+.current-root .mx-name-container2 {
+  display: flex !important;
+  justify-content: flex-end !important;
+  margin-bottom: 1rem;
+}
+.current-root .back-button {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.5rem;
+  background: #ffffff !important;
+  color: #374151 !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 8px !important;
+  padding: 0.5rem 1rem !important;
+  font-size: 1rem !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06) !important;
+  text-decoration: none !important;
+  cursor: pointer;
+}
+.current-root .back-button:hover {
+  background: #eef2f7 !important;
+}
+.current-root .exercise-detail .exercise-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #1f2937;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.current-root .exercise-detail {
+  background: #f5f9fc;
+  border-radius: 16px;
+  padding: 2rem;
+  margin: 0 auto 2rem;
+  max-width: 600px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.current-root .exercise-image {
+  display: block;
+  margin: 0 auto 1.5rem;
+  max-width: 200px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+.current-root .start-button {
+  background: #10b981;
+  color: #ffffff;
+  border: none;
   border-radius: 12px;
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
-  color: #374151;
+  font-weight: 500;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  transition: filter 0.2s;
+  margin-bottom: 1.5rem;
+}
+.current-root .start-button:hover {
+  filter: brightness(1.05);
+}
+.current-root .alert-box {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  color: #374151;
+  font-size: 0.95rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  margin: 0 auto 1.5rem;
+  display: inline-block;
+}
+.current-root .export-button {
+  background: #ffffff;
+  color: #374151;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.current-root .export-button:hover {
+  background: #eef2f7;
 }
 
 /*# sourceMappingURL=theme.compiled.css.map */

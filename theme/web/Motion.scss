@@ -1,8 +1,8 @@
 @import "./custom-variables";
 
-/* ============================================================
+/* ------------------------------------------------------------
    0) Fond violet & reset général
-   ============================================================ */
+------------------------------------------------------------ */
 .motion-root {
   min-height: 100vh;
   margin: 0;
@@ -16,15 +16,16 @@
   padding: 0;
 }
 
-/* ============================================================
+/* ------------------------------------------------------------
    1) Barre blanche de navigation
-   ============================================================ */
+------------------------------------------------------------ */
 .header-bar {
+  width: calc(100% - 2rem);
+  max-width: 900px;
   background: #ffffff;
   border-radius: 1.5rem;
   padding: 0.75rem 1.5rem;
-  margin: 1rem auto 2rem;
-  max-width: calc(100% - 2rem);
+  margin: 1rem auto;
   display: flex;
   justify-content: center;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
@@ -34,43 +35,30 @@
   gap: 1rem;
 }
 .nav-buttons .mx-button {
-  background: #f8fafc;
-  color: #374151;
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;
-  font-size: 1.1rem;
-  font-weight: 500;
-  padding: 0.5rem 1rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
-  transition: background 0.2s, box-shadow 0.2s;
-}
-.nav-buttons .mx-button:hover {
-  background: #eef2f7;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+  /* tes règles existantes */
 }
 .nav-buttons .mx-button.active {
-  background: linear-gradient(135deg, #4f46e5 0%, #6d5afe 100%);
-  color: #ffffff;
-  border: none;
+  /* tes règles existantes */
 }
 
-/* ============================================================
-   2) Conteneur principal de la section Motion
-   ============================================================ */
-.motion-section {
+/* ------------------------------------------------------------
+   2) Centre et ajuste LE wrapper "motion-card"
+------------------------------------------------------------ */
+.motion-card {
+  width: 80%;
+  max-width: 700px;
+  margin: 2rem auto;
   background: #f5f9fc;
   border-radius: 16px;
-  padding: 3rem 2rem;         /* padding agrandi */
-  margin: 0 auto 2rem;
-  max-width: 1000px;          /* largeur centrée */
+  padding: 3rem 2rem;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   text-align: center;
 }
 
-/* ============================================================
+/* ------------------------------------------------------------
    3) Titre “Motion Detection”
-   ============================================================ */
-.motion-section .page-title {
+------------------------------------------------------------ */
+.motion-card .page-title {
   font-size: 1.75rem;
   font-weight: 600;
   color: #1f2937;
@@ -80,20 +68,19 @@
   gap: 0.5rem;
 }
 
-/* ============================================================
+/* ------------------------------------------------------------
    4) Card contenant l’image
-   ============================================================ */
-.motion-card {
+------------------------------------------------------------ */
+.motion-image-wrapper {
+  width: 200px;
+  margin: 0 auto 1.5rem;
   background: #ffffff;
   border-radius: 16px;
   padding: 2rem;
-  display: inline-block;
-  width: 250px;               /* largeur fixe centrée */
-  margin: 0 auto 1.5rem;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
-.motion-card img,
-.motion-card .mx-imageviewer {
+.motion-image-wrapper img,
+.motion-image-wrapper .mx-imageviewer {
   width: 100%;
   height: auto;
   border-radius: 12px;
@@ -101,15 +88,21 @@
   object-fit: cover;
 }
 
-/* ============================================================
-   5) Texte d’alerte sous la card
-   ============================================================ */
+/* ------------------------------------------------------------
+   5) Texte d’alerte sous la carte – full width auto, pas de wrapping
+------------------------------------------------------------ */
 .motion-alert {
-  display: inline-block;
-  background: #f8fafc;
+  display: block;                 /* toute la largeur nécessaire */
+  width: auto;                    /* auto pour s’ajuster au contenu */
+  margin: 1rem auto;              /* centré horizontalement */
+  padding: 1rem 2rem;             /* espace intérieur confortable */
+  background: #ffffff;
   border-radius: 12px;
-  padding: 0.75rem 1.5rem;
   font-size: 1rem;
   color: #374151;
   box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  
+  white-space: nowrap;            /* empêche tout retour à la ligne */
+  overflow-x: auto;               /* en cas de très long texte, scroll si besoin */
+  text-align: center;             /* centre le texte */
 }

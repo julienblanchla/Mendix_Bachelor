@@ -1,0 +1,171 @@
+@import "./custom-variables";
+
+/* ============================================================
+   Page racine “Current Exercise”
+============================================================ */
+.current-root {
+  min-height: 100vh !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: linear-gradient(135deg, #6d5afe 0%, #8a67ff 100%) !important;
+
+  /* rendre transparents tous les containers internes */
+  .mx-layout-grid,
+  .mx-container {
+    background: transparent !important;
+  }
+
+  /* ============================================================
+     1) Barre blanche de navigation (Dashboard / Charts / …)
+  ============================================================ */
+  .header-bar {
+    background: #ffffff;
+    border-radius: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    margin: 1rem auto 2rem;
+    max-width: calc(100% - 2rem);
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  .header-bar .nav-buttons {
+    display: flex;
+    gap: 1rem;
+  }
+  .header-bar .nav-buttons .mx-button {
+    background: #f8fafc;
+    color: #374151;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    transition: background 0.2s, box-shadow 0.2s;
+  }
+  .header-bar .nav-buttons .mx-button:hover {
+    background: #eef2f7;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+  }
+  .header-bar .nav-buttons .mx-button.active {
+    background: linear-gradient(135deg, #4f46e5 0%, #6d5afe 100%);
+    color: #ffffff;
+    border: none;
+  }
+
+  /* ============================================================
+     2) Container du Back-button aligné à droite
+  ============================================================ */
+  .mx-name-container2 {
+    display: flex !important;
+    justify-content: flex-end !important;
+    margin-bottom: 1rem;
+  }
+  .back-button {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 0.5rem;
+    background: #ffffff !important;
+    color: #374151 !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 8px !important;
+    padding: 0.5rem 1rem !important;
+    font-size: 1rem !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06) !important;
+    text-decoration: none !important;
+    cursor: pointer;
+  }
+  .back-button:hover {
+    background: #eef2f7 !important;
+  }
+
+  /* ============================================================
+     3) Titre de la section
+  ============================================================ */
+  .exercise-detail .exercise-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #1f2937;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  /* ============================================================
+     4) Conteneur principal de l’exercice
+  ============================================================ */
+  .exercise-detail {
+    background: #f5f9fc;
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 0 auto 2rem;
+    max-width: 600px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+
+  /* ============================================================
+     5) Image du capteur / avatar
+  ============================================================ */
+  .exercise-image {
+    display: block;
+    margin: 0 auto 1.5rem;
+    max-width: 200px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  }
+
+  /* ============================================================
+     6) Bouton “Start”
+  ============================================================ */
+  .start-button {
+    background: #10b981;
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    cursor: pointer;
+    transition: filter 0.2s;
+    margin-bottom: 1.5rem;
+  }
+  .start-button:hover {
+    filter: brightness(1.05);
+  }
+
+  /* ============================================================
+     7) Champ d’information / alerte
+  ============================================================ */
+  .alert-box {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    color: #374151;
+    font-size: 0.95rem;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    margin: 0 auto 1.5rem;
+    display: inline-block;
+  }
+
+  /* ============================================================
+     8) Bouton “Export CSV”
+  ============================================================ */
+  .export-button {
+    background: #ffffff;
+    color: #374151;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .export-button:hover {
+    background: #eef2f7;
+  }
+}

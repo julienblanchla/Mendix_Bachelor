@@ -1,0 +1,195 @@
+@import "./custom-variables";
+
+/* ============================================================
+   0) Fond violet & reset pour la page Patients
+   ============================================================ */
+.patients-root {
+  min-height: 100vh !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: linear-gradient(135deg, #6d5afe 0%, #8a67ff 100%) !important;
+}
+.patients-root .mx-layout-grid,
+.patients-root .mx-container {
+  background: transparent !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* ============================================================
+   1) Aligner HORIZONTALement les boutons du snippet
+      sans toucher à leur apparence native
+   ============================================================ */
+.patients-root .mx-grid-control-bar {
+  display: flex !important;             /* on passe en flex */
+  justify-content: center !important;   /* centré horizontalement */
+  align-items: center !important;
+  gap: 1rem !important;                 /* espace équivalent entre boutons */
+  width: calc(100% - 2rem) !important;
+  max-width: 900px !important;
+  margin: 1.5rem auto !important;
+}
+/* PLUS AUCUNE règle .mx-grid-control-bar .mx-button ici ! */
+
+/* ============================================================
+   2) Barre de navigation principale (Dashboard/Charts/…)
+   ============================================================ */
+.header-bar {
+  width: calc(100% - 2rem);
+  max-width: 900px;
+  background: #ffffff;
+  border-radius: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  margin: 1rem auto;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.nav-buttons {
+  display: flex;
+  gap: 1rem;
+}
+.nav-buttons .mx-button {
+  background-color: #f8fafc;
+  color: #374151;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.nav-buttons .mx-button:hover {
+  background-color: #eef2f7;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+}
+.nav-buttons .mx-button.active {
+  background: linear-gradient(135deg, #4f46e5 0%, #6d5afe 100%);
+  color: #ffffff;
+  border: none;
+}
+
+/* ============================================================
+   3) En-tête “Patients List” + bouton Add New Patient
+   ============================================================ */
+.patients-header {
+  width: calc(100% - 2rem);
+  max-width: 900px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1rem 2rem;
+  margin: 2rem auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.patients-header .page-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.patients-header .add-button {
+  background: #10b981;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  transition: filter 0.2s;
+}
+.patients-header .add-button:hover {
+  filter: brightness(1.05);
+}
+
+/* ============================================================
+   4) Grille responsive de cartes patient
+   ============================================================ */
+.patients-root .patients-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important;
+  gap: 1rem !important;
+  margin: 0 auto 2rem !important;
+  width: calc(100% - 2rem) !important;
+  max-width: 900px !important;
+}
+
+/* ============================================================
+   5) Carte individuelle patient
+   ============================================================ */
+.patient-card {
+  position: relative !important;
+  background: #f5f9fc !important;
+  border-radius: 16px !important;
+  padding: 1.5rem !important;
+  margin: 1rem !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+  overflow: hidden !important;
+}
+.patient-card::before {
+  content: "" !important;
+  position: absolute !important;
+  top: 0; bottom: 0; left: 0 !important;
+  width: 4px !important;
+  background: #3b82f6 !important;
+}
+
+/* Avatar centré */
+.patient-card .avatar,
+.patient-card img.avatar,
+.patient-card .mx-imageviewer.avatar {
+  display: block !important;
+  width: 64px !important;
+  height: 64px !important;
+  margin: 0 auto 1rem !important;
+  border-radius: 50% !important;
+  border: 2px solid #e5e7eb !important;
+  object-fit: cover !important;
+}
+
+/* Nom du patient */
+.patient-card .name {
+  text-align: center !important;
+  font-size: 1.25rem !important;
+  font-weight: 600 !important;
+  color: #1f2937 !important;
+  margin-bottom: 0.5rem !important;
+}
+
+/* Labels & valeurs alignés */
+.patient-card .label {
+  display: inline-block !important;
+  width: 80px !important;
+  font-weight: 600 !important;
+  color: #4b5563 !important;
+  vertical-align: top !important;
+  margin-bottom: 0.25rem !important;
+}
+.patient-card .label + .mx-text {
+  display: inline-block !important;
+  color: #1f2937 !important;
+  margin-bottom: 0.25rem !important;
+}
+
+/* ============================================================
+   6) Bouton “Exercises List”
+   ============================================================ */
+.patient-card .mx-button {
+  display: block !important;
+  margin: 1rem auto 0 !important;
+  background: #0891b2 !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 8px !important;
+  padding: 0.5rem 1rem !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06) !important;
+  transition: filter 0.2s !important;
+}
+.patient-card .mx-button:hover {
+  filter: brightness(1.1) !important;
+}
