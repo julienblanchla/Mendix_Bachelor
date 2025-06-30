@@ -1,0 +1,144 @@
+@import "./custom-variables";
+
+/* === SensorData.scss === */
+
+/* 0) Fond violet sur tout le root */
+.sensor-root {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #6d5afe 0%, #8a67ff 100%);
+}
+
+/* On nettoie les containers par défaut pour laisser voir le fond */
+.sensor-root .mx-layout-grid,
+.sensor-root .mx-container {
+  background: transparent;
+  margin: 0;
+  padding: 0;
+}
+
+/* 1) Styling des boutons de nav */
+.nav-buttons {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+.nav-buttons .mx-button {
+  background: #f8fafc;
+  color: #374151;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  margin: 0 0.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  transition: all .2s ease;
+}
+.nav-buttons .mx-button:hover {
+  background: #eef2f7;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+}
+.nav-buttons .mx-button.active {
+  background: linear-gradient(135deg, #4f46e5 0%, #6d5afe 100%);
+  color: #fff;
+  border: none;
+}
+
+/* 2) Grille principale : 3 sections côte-à-côte */
+.sections-grid {
+  /* Ce container englobe layoutGrid3 */
+  padding: 1rem;
+}
+.sections-grid > .mini-cards-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 2.5fr 1fr;
+  gap: 1rem;
+  width: 100%;
+  margin: 0 auto;
+}
+/* on retire toute marge individuelle */
+.chart-card,
+.live-section,
+.motion-card {
+  margin: 0;
+}
+
+/* 3) Carte Graphique */
+.chart-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.chart-card canvas {
+  border-radius: 12px;
+  display: block;
+}
+
+/* 4) Live Sensor Data */
+.live-section {
+  background: #f5f9fc;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+/* === 2×2 Layout pour tes mini‐cartes === */
+.live-section .mini-cards-grid {
+  display: grid;                     /* active CSS Grid */
+  grid-template-columns: 1fr 1fr;    /* exactement 2 colonnes égales */
+  grid-auto-rows: auto;              /* laisse la hauteur s’ajuster */
+  gap: 1rem;                         /* espace entre tuiles */
+  margin: 0;                         /* on supprime les marges orphelines */
+}
+
+/* style des mini-cartes */
+.mini-card {
+  position: relative;
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  overflow: hidden;
+}
+/* bandeaux colorés */
+.mini-card.accel::before  { content:""; position:absolute; top:0; bottom:0; left:0; width:4px; background:#10B981; }
+.mini-card.temp::before   { content:""; position:absolute; top:0; bottom:0; left:0; width:4px; background:#F59E0B; }
+.mini-card.humid::before  { content:""; position:absolute; top:0; bottom:0; left:0; width:4px; background:#3B82F6; }
+.mini-card.airq::before   { content:""; position:absolute; top:0; bottom:0; left:0; width:4px; background:#8B5CF6; }
+/* titre + icône alignés */
+.mini-card .mx-text {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.mini-card .mx-text .icon {
+  margin-right: 0.5rem;
+}
+/* padding des cellules */
+.mini-card table td {
+  padding: 0.25rem 0;
+}
+
+/* 5) Motion Detection */
+.motion-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
+}
+.motion-card .mx-imageviewer {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 1rem;
+  display: inline-block;
+}
+.motion-card .mx-text {
+  margin-top: 0.5rem;
+  display: inline-block;
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 0.5rem 1rem;
+}

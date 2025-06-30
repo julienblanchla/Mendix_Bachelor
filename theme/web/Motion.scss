@@ -1,0 +1,115 @@
+@import "./custom-variables";
+
+/* ============================================================
+   0) Fond violet & reset général
+   ============================================================ */
+.motion-root {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #6d5afe 0%, #8a67ff 100%);
+}
+.motion-root .mx-layout-grid,
+.motion-root .mx-container {
+  background: transparent !important;
+  margin: 0;
+  padding: 0;
+}
+
+/* ============================================================
+   1) Barre blanche de navigation
+   ============================================================ */
+.header-bar {
+  background: #ffffff;
+  border-radius: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  margin: 1rem auto 2rem;
+  max-width: calc(100% - 2rem);
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.nav-buttons {
+  display: flex;
+  gap: 1rem;
+}
+.nav-buttons .mx-button {
+  background: #f8fafc;
+  color: #374151;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.nav-buttons .mx-button:hover {
+  background: #eef2f7;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+}
+.nav-buttons .mx-button.active {
+  background: linear-gradient(135deg, #4f46e5 0%, #6d5afe 100%);
+  color: #ffffff;
+  border: none;
+}
+
+/* ============================================================
+   2) Conteneur principal de la section Motion
+   ============================================================ */
+.motion-section {
+  background: #f5f9fc;
+  border-radius: 16px;
+  padding: 3rem 2rem;         /* padding agrandi */
+  margin: 0 auto 2rem;
+  max-width: 1000px;          /* largeur centrée */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+/* ============================================================
+   3) Titre “Motion Detection”
+   ============================================================ */
+.motion-section .page-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ============================================================
+   4) Card contenant l’image
+   ============================================================ */
+.motion-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2rem;
+  display: inline-block;
+  width: 250px;               /* largeur fixe centrée */
+  margin: 0 auto 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.motion-card img,
+.motion-card .mx-imageviewer {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+  object-fit: cover;
+}
+
+/* ============================================================
+   5) Texte d’alerte sous la card
+   ============================================================ */
+.motion-alert {
+  display: inline-block;
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  color: #374151;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}

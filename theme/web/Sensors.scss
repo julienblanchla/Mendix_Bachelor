@@ -1,0 +1,18 @@
+@import './custom-variables';
+
+/* === Fond violet comme les autres pages === */
+.sensors-root {
+  /* le même gradient que SensorData & Charts */
+  background: linear-gradient(135deg, #6d5afe 0%, #8a67ff 100%);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* Et on rend transparents les containers internes */
+.sensors-root .mx-layout-grid,
+.sensors-root .mx-container {
+  background: transparent;
+  margin: 0;
+  padding: 0;
+}
