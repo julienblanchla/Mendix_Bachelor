@@ -2,7 +2,7 @@
 
 /* ============================================================
    0) Fond violet & reset pour la page Exercices
-============================================================ */
+   ============================================================ */
 .exercises-root {
   min-height: 100vh !important;
   margin: 0 !important;
@@ -18,7 +18,7 @@
 
 /* ============================================================
    1) Barre blanche de navigation (Back + nav buttons)
-============================================================ */
+   ============================================================ */
 .header-bar {
   background: #fff;
   border-radius: 1.5rem;
@@ -55,9 +55,20 @@
 }
 
 /* ============================================================
-   2) Bouton “Back to Patients”
-============================================================ */
+   2) Centrage du container autour du Back-button
+   ============================================================ */
+.exercises-root .mx-name-container1 {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin: 1rem 0 !important;
+}
+
+/* ============================================================
+   3) Bouton “Back to Patients”
+   ============================================================ */
 .back-button {
+  /* centré par le parent flex */
   display: inline-flex !important;
   align-items: center;
   gap: 0.5rem;
@@ -68,17 +79,18 @@
   padding: 0.5rem 1rem !important;
   font-size: 1rem !important;
   box-shadow: 0 2px 6px rgba(0,0,0,0.06) !important;
-  margin: 1rem auto !important;
   text-decoration: none !important;
   cursor: pointer;
+  transition: background 0.2s;
+  margin: 0 !important;
 }
 .back-button:hover {
   background: #eef2f7 !important;
 }
 
 /* ============================================================
-   3) Titre de section “Available Exercises”
-============================================================ */
+   4) Titre de section “Available Exercises”
+   ============================================================ */
 .section-title {
   font-size: 1.75rem;
   font-weight: 600;
@@ -91,8 +103,8 @@
 }
 
 /* ============================================================
-   4) Centrage du layoutGrid1 (contenant toute la page)
-============================================================ */
+   5) Centrage du layoutGrid1 (contenant toute la page)
+   ============================================================ */
 .exercises-root .mx-name-layoutGrid1 {
   display: flex !important;
   justify-content: center !important;
@@ -101,8 +113,8 @@
 }
 
 /* ============================================================
-   5) Mettre les deux lignes côte-à-côte en forçant layoutGrid5
-============================================================ */
+   6) Mettre les deux lignes côte-à-côte en forçant layoutGrid5
+   ============================================================ */
 .exercises-root .mx-name-layoutGrid5 {
   display: flex !important;
   flex-wrap: wrap !important;
@@ -112,8 +124,8 @@
 }
 
 /* ============================================================
-   6) Carte d’un exercice
-============================================================ */
+   7) Carte d’un exercice
+   ============================================================ */
 .exercise-card {
   position: relative !important;
   background: #f5f9fc !important;
@@ -124,7 +136,7 @@
   display: flex !important;
   flex-direction: column;
   align-items: center;
-  width: 320px; /* largeur fixe pour uniformiser */
+  width: 320px;
 }
 .exercise-card::before {
   content: "" !important;

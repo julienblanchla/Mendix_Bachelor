@@ -1,7 +1,7 @@
 @import "./custom-variables";
 
 /* ============================================================
-   0) Fond violet & reset pour la page Patients
+   0) Fond violet & reset général pour la page Patients
    ============================================================ */
 .patients-root {
   min-height: 100vh !important;
@@ -17,19 +17,20 @@
 }
 
 /* ============================================================
-   1) Aligner HORIZONTALement les boutons du snippet
-      sans toucher à leur apparence native
+   1) Barre d’actions (Search / New / Edit / Delete)
+      – alignée HORIZONTALEMENT, sans styles de boutons
    ============================================================ */
 .patients-root .mx-grid-control-bar {
-  display: flex !important;             /* on passe en flex */
-  justify-content: center !important;   /* centré horizontalement */
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
   align-items: center !important;
-  gap: 1rem !important;                 /* espace équivalent entre boutons */
-  width: calc(100% - 2rem) !important;
-  max-width: 900px !important;
+  gap: 1rem !important;
+  width: auto !important;
   margin: 1.5rem auto !important;
 }
-/* PLUS AUCUNE règle .mx-grid-control-bar .mx-button ici ! */
+/* Aucun style pour .mx-grid-control-bar .mx-button */
 
 /* ============================================================
    2) Barre de navigation principale (Dashboard/Charts/…)
@@ -49,26 +50,7 @@
   display: flex;
   gap: 1rem;
 }
-.nav-buttons .mx-button {
-  background-color: #f8fafc;
-  color: #374151;
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;
-  font-size: 1.1rem;
-  font-weight: 500;
-  padding: 0.5rem 1rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
-  transition: background 0.2s, box-shadow 0.2s;
-}
-.nav-buttons .mx-button:hover {
-  background-color: #eef2f7;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
-}
-.nav-buttons .mx-button.active {
-  background: linear-gradient(135deg, #4f46e5 0%, #6d5afe 100%);
-  color: #ffffff;
-  border: none;
-}
+/* Pas de personnalisation de .nav-buttons .mx-button */
 
 /* ============================================================
    3) En-tête “Patients List” + bouton Add New Patient
@@ -93,19 +75,7 @@
   align-items: center;
   gap: 0.5rem;
 }
-.patients-header .add-button {
-  background: #10b981;
-  color: #ffffff;
-  border: none;
-  border-radius: 12px;
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
-  transition: filter 0.2s;
-}
-.patients-header .add-button:hover {
-  filter: brightness(1.05);
-}
+/* Pas de modification du style du bouton “Add New Patient” */
 
 /* ============================================================
    4) Grille responsive de cartes patient
@@ -179,17 +149,4 @@
 /* ============================================================
    6) Bouton “Exercises List”
    ============================================================ */
-.patient-card .mx-button {
-  display: block !important;
-  margin: 1rem auto 0 !important;
-  background: #0891b2 !important;
-  color: #ffffff !important;
-  border: none !important;
-  border-radius: 8px !important;
-  padding: 0.5rem 1rem !important;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.06) !important;
-  transition: filter 0.2s !important;
-}
-.patient-card .mx-button:hover {
-  filter: brightness(1.1) !important;
-}
+/* Aucun style obligatoire pour .patient-card .mx-button */

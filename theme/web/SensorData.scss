@@ -1,6 +1,6 @@
 @import "./custom-variables";
 
-/* === SensorData.scss === */
+/* === SensorData.scss (version alignée) === */
 
 /* 0) Fond violet sur tout le root */
 .sensor-root {
@@ -22,16 +22,16 @@
 .nav-buttons {
   display: flex;
   justify-content: center;
-  margin: 1rem 0;
+  margin: 0.75rem 0;
 }
 .nav-buttons .mx-button {
   background: #f8fafc;
   color: #374151;
   border: 1px solid #e2e8f0;
   border-radius: 12px;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 500;
-  padding: 0.75rem 1.5rem;
+  padding: 0.5rem 1rem;
   margin: 0 0.5rem;
   box-shadow: 0 2px 6px rgba(0,0,0,0.06);
   transition: all .2s ease;
@@ -48,49 +48,59 @@
 
 /* 2) Grille principale : 3 sections côte-à-côte */
 .sections-grid {
-  /* Ce container englobe layoutGrid3 */
-  padding: 1rem;
+  padding: 0.5rem;
 }
 .sections-grid > .mini-cards-grid {
   display: grid;
-  grid-template-columns: 1.5fr 2.5fr 1fr;
-  gap: 1rem;
+  grid-template-columns: 2fr 1.4fr 1fr;
+  gap: 0.75rem;
   width: 100%;
   margin: 0 auto;
+  align-items: start;    /* items alignés en haut */
+  align-content: start;  /* contenu de la grille en haut */
 }
-/* on retire toute marge individuelle */
+
+/* suppression des marges individuelles */
 .chart-card,
 .live-section,
 .motion-card {
   margin: 0;
 }
 
-/* 3) Carte Graphique */
+/* 3) Carte Graphique – agrandie */
 .chart-card {
   background: #fff;
   border-radius: 16px;
-  padding: 1rem;
+  padding: 0.75rem;
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 .chart-card canvas {
   border-radius: 12px;
+  flex: 1;
+  width: 100% !important;
+  height: 100% !important;
   display: block;
 }
 
-/* 4) Live Sensor Data */
+/* 4) Live Sensor Data – réduite */
 .live-section {
   background: #f5f9fc;
   border-radius: 16px;
-  padding: 1.5rem;
+  padding: 1rem;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
-/* === 2×2 Layout pour tes mini‐cartes === */
 .live-section .mini-cards-grid {
-  display: grid;                     /* active CSS Grid */
-  grid-template-columns: 1fr 1fr;    /* exactement 2 colonnes égales */
-  grid-auto-rows: auto;              /* laisse la hauteur s’ajuster */
-  gap: 1rem;                         /* espace entre tuiles */
-  margin: 0;                         /* on supprime les marges orphelines */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: auto;
+  gap: 0.75rem;
+  margin: 0;
 }
 
 /* style des mini-cartes */
@@ -98,7 +108,7 @@
   position: relative;
   background: #fff;
   border-radius: 12px;
-  padding: 1rem;
+  padding: 0.75rem;
   box-shadow: 0 1px 4px rgba(0,0,0,0.05);
   overflow: hidden;
 }
@@ -111,34 +121,35 @@
 .mini-card .mx-text {
   display: flex;
   align-items: center;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
 }
 .mini-card .mx-text .icon {
-  margin-right: 0.5rem;
+  margin-right: 0.4rem;
 }
 /* padding des cellules */
 .mini-card table td {
-  padding: 0.25rem 0;
+  padding: 0.2rem 0;
 }
 
-/* 5) Motion Detection */
+/* 5) Motion Detection – alignée */
 .motion-card {
   background: #fff;
   border-radius: 16px;
-  padding: 1.5rem;
+  padding: 1rem;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   text-align: center;
+  align-self: start; /* force l’alignement en haut */
 }
 .motion-card .mx-imageviewer {
   background: #f8fafc;
   border-radius: 12px;
-  padding: 1rem;
+  padding: 0.75rem;
   display: inline-block;
 }
 .motion-card .mx-text {
-  margin-top: 0.5rem;
+  margin-top: 0.4rem;
   display: inline-block;
   background: #f8fafc;
   border-radius: 12px;
-  padding: 0.5rem 1rem;
+  padding: 0.4rem 0.8rem;
 }

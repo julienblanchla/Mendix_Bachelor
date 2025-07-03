@@ -1,0 +1,200 @@
+@import "./custom-variables";
+
+/* ============================================================
+   0) Fond violet & reset général pour la page Current Exercise
+   (identique à Motion)
+   ============================================================ */
+.current-root {
+  min-height: 100vh !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: linear-gradient(135deg, #6d5afe 0%, #8a67ff 100%) !important;
+
+  /* rendre transparents tous les containers internes */
+  .mx-layout-grid,
+  .mx-container {
+    background: transparent !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
+
+/* ============================================================
+   1) Barre de navigation principale (Dashboard / Charts / …)
+   (reprise de Motion)
+   ============================================================ */
+.current-root .header-bar {
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(20px);
+  border-radius: 1rem;
+  padding: 1rem 1.5rem;
+  margin: 1.5rem auto;
+  max-width: 900px;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+}
+.current-root .header-bar .nav-buttons {
+  display: flex;
+  gap: 0.75rem;
+}
+.current-root .header-bar .nav-buttons .mx-button {
+  background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+  color: #475569;
+  border: 1px solid rgba(203,213,225,0.5);
+  border-radius: 0.75rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.current-root .header-bar .nav-buttons .mx-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+.current-root .header-bar .nav-buttons .mx-button.active {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  color: #fff;
+  border-color: rgba(59,130,246,0.3);
+}
+
+/* ============================================================
+   2) Bouton de retour (Back) aligné à droite
+   (reprise de Motion recording section styling)
+   ============================================================ */
+.current-root .mx-name-container2 {
+  display: flex !important;
+  justify-content: flex-end !important;
+  margin: 2rem auto 1rem !important;
+  max-width: 900px;
+}
+.current-root .back-button {
+  background: linear-gradient(135deg, #f8fafc, #e2e8f0) !important;
+  color: #475569 !important;
+  border: 1px solid rgba(203,213,225,0.5) !important;
+  border-radius: 0.75rem !important;
+  padding: 0.6rem 1.2rem !important;
+  font-size: 0.9rem !important;
+  font-weight: 500 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+.current-root .back-button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15) !important;
+}
+
+/* ============================================================
+   3) Conteneur central de l’exercice
+   (reprend style de .motion-card)
+   ============================================================ */
+.current-root .exercise-detail {
+  background: rgba(255,255,255,0.98);
+  backdrop-filter: blur(20px);
+  border-radius: 1rem;
+  padding: 2rem;
+  margin: 0 auto 2rem;
+  max-width: 600px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+/* Titre centré correctement */
+.current-root .exercise-detail .exercise-title {
+  display: inline-block;
+  width: auto;
+  margin: 0 auto 1.5rem;
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #374151;
+}
+
+/* ============================================================
+   4) Image agrandie mais contenue
+   ============================================================ */
+.current-root .exercise-detail .exercise-image {
+  width: 250px;
+  height: auto;
+  margin: 0 auto 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+  padding: 1rem;
+}
+
+/* ============================================================
+   5) Boutons d’action (Start / Export)
+   ============================================================ */
+.current-root .exercise-detail .start-button,
+.current-root .exercise-detail .export-button {
+  border: none;
+  border-radius: 0.75rem;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+/* Start bouton en vert */
+.current-root .exercise-detail .start-button {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: #fff;
+}
+.current-root .exercise-detail .start-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+/* Export bouton en bleu */
+.current-root .exercise-detail .export-button {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  color: #fff;
+}
+.current-root .exercise-detail .export-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+/* ============================================================
+   6) Style du bouton "Export CSV" dans container2
+   Ajout d’un margin-top pour descendre le bouton
+   ============================================================ */
+.current-root .mx-name-container2 .export-button {
+  background: linear-gradient(135deg, #2563eb, #1e40af) !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 0.75rem !important;
+  padding: 0.6rem 1.2rem !important;
+  font-size: 0.9rem !important;
+  font-weight: 500 !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+  margin: 1.5rem 0 0 !important;  /* passe à 1.5rem en haut */
+}
+.current-root .mx-name-container2 .export-button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15) !important;
+}
+
+/* ============================================================
+   7) Alerte / Info Box
+   ============================================================ */
+.current-root .exercise-detail .alert-box {
+  background: rgba(248,250,252,0.8);
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  color: #64748b;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  margin: 1rem auto;
+  max-width: 80%;
+  text-align: center;
+}

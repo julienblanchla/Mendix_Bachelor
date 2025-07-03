@@ -34,12 +34,7 @@
   display: flex;
   gap: 1rem;
 }
-.nav-buttons .mx-button {
-  /* tes règles existantes */
-}
-.nav-buttons .mx-button.active {
-  /* tes règles existantes */
-}
+/* tu peux conserver ici tes règles .nav-buttons .mx-button et .active */
 
 /* ------------------------------------------------------------
    2) Centre et ajuste LE wrapper "motion-card"
@@ -69,40 +64,44 @@
 }
 
 /* ------------------------------------------------------------
-   4) Card contenant l’image
+   4) Card contenant l’image (agrandissement)
 ------------------------------------------------------------ */
 .motion-image-wrapper {
-  width: 200px;
+  /* on passe de 200px à 300px de large */
+  width: 300px;
   margin: 0 auto 1.5rem;
   background: #ffffff;
   border-radius: 16px;
   padding: 2rem;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
+
+/* si tu as une classe .image, on cible .motion-card .image */
+.motion-card .image,
 .motion-image-wrapper img,
 .motion-image-wrapper .mx-imageviewer {
-  width: 100%;
-  height: auto;
+  width: 30%;    /* prend toute la largeur de son parent */
+  height: auto;   /* conserve le ratio */
   border-radius: 12px;
   display: block;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 /* ------------------------------------------------------------
-   5) Texte d’alerte sous la carte – full width auto, pas de wrapping
+   5) Texte d’alerte sous la carte
 ------------------------------------------------------------ */
 .motion-alert {
-  display: block;                 /* toute la largeur nécessaire */
-  width: auto;                    /* auto pour s’ajuster au contenu */
-  margin: 1rem auto;              /* centré horizontalement */
-  padding: 1rem 2rem;             /* espace intérieur confortable */
+  display: block;
+  width: auto;
+  margin: 1rem auto;
+  padding: 1rem 2rem;
   background: #ffffff;
   border-radius: 12px;
   font-size: 1rem;
   color: #374151;
   box-shadow: 0 2px 6px rgba(0,0,0,0.06);
-  
-  white-space: nowrap;            /* empêche tout retour à la ligne */
-  overflow-x: auto;               /* en cas de très long texte, scroll si besoin */
-  text-align: center;             /* centre le texte */
+
+  white-space: nowrap;
+  overflow-x: auto;
+  text-align: center;
 }
