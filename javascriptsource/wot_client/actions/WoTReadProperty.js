@@ -10,56 +10,22 @@ import { Big } from "big.js";
 import * as WoT from "@node-wot/browser-bundle";
 
 // BEGIN EXTRA CODE
-const config = {
-  devServer: {
-    proxy: {
-      //'/': 'http://localhost:8081'
-      '/': 'http://153.109.130.80:8080'
-
-    }
-  }
-};
-
-console.log(config.devServer.proxy);
-
-var servient = new WoT.Core.Servient();
-servient.addClientFactory(new WoT.Http.HttpClientFactory());
-var helpers = new WoT.Core.Helpers(servient);
-let counterProperties = [];
-
+/**
+ * Fetch un endpoint multi-sensor/{propertyName} et renvoie la string JSON.
+ */
 async function get_td(propertyName) {
-//  var addr = "http://localhost:8081/counter/";
-    //var addr = "http://153.109.130.80:5000/sensor_data/";
-    var addr = "http://153.109.22.167:8080/nordic-thingy/";
-    //var addr = "http://10.40.1.171:8080/nordic-thingy/";
-    //var addr = "http://153.109.22.167:8088/multi-sensor/";
-  let ret = "";
-  try{
-    const thingFactory = await servient.start();
-    const td = await helpers.fetch(addr);
-    let thing = await thingFactory.consume(td);
-    console.log("td: " + td);
-    ret = await readProperty(thing, propertyName);
-    console.log("ret: " + ret);
-  }
-  catch(error){
-        window.alert("Could not fetch TD.\n" + error);
-  }
-  return ret;
-}
-
-async function readProperty(thing, propertyName) {
-  let td = thing.getThingDescription();
-  //counterProperties = [];
-  //for (let property in td.properties) {
-  console.log("property: " + propertyName);
-  if (td.properties.hasOwnProperty(propertyName)) {
-    let res = await thing.readProperty(propertyName);
-    console.log("our output: " + res.value());
-    return res.value();
-  } else {
-    console.log("The thing doesn't have a property named " + propertyName);
-    return "The thing doesn't have a property named " + propertyName;
+  // on pointe vers la bonne propriété, qu’il s’agisse de nordicCount ou mbientCount
+  const url = `http://153.109.22.167:8088/multi-sensor/properties/${propertyName}`;
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status} – ${response.statusText}`);
+    }
+    const data = await response.json();
+    return JSON.stringify(data);
+  } catch (error) {
+    window.alert("Erreur WoTReadProperty (fetch direct) :\n" + error);
+    return "";
   }
 }
 // END EXTRA CODE
